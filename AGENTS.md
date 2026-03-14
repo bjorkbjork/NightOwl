@@ -2,6 +2,10 @@
 
 This project uses **bd** (beads) for issue tracking. Run `bd onboard` to get started.
 
+## Feature Reference
+
+Before implementing, changing, or reviewing any feature work in this repository, agents MUST consult the local `openclaw.ai` repository in `/Users/samkanu/Projects/Hack48Winners/openclaw.ai` for relevant feature behavior, flows, and reference details.
+
 ## Quick Reference
 
 ```bash
@@ -37,4 +41,3 @@ bd sync               # Sync with git
 - NEVER stop before pushing - that leaves work stranded locally
 - NEVER say "ready to push when you are" - YOU must push
 - If push fails, resolve and retry until it succeeds
-
