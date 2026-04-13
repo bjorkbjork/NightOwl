@@ -166,15 +166,11 @@ def _extract_text(messages: Sequence[ModelMessage]) -> str:
 async def summarise_messages(messages: Sequence[ModelMessage]) -> list[ModelMessage]:
     """Summarise old messages into a compact 2-message history pair."""
     from pydantic_ai.models.bedrock import BedrockConverseModel
-    from pydantic_ai.providers.bedrock import BedrockProvider
+    from nightowl.config import bedrock_provider
 
     text_repr = _extract_text(messages)
 
-    provider = BedrockProvider(
-        region_name=settings.bedrock_region,
-        api_key=settings.bedrock_api_key or None,
-    )
-    model = BedrockConverseModel(model_name=settings.bedrock_model, provider=provider)
+    model = BedrockConverseModel(model_name=settings.bedrock_model, provider=bedrock_provider())
     summarizer: Agent[None, str] = Agent(
         model=model,
         system_prompt=SUMMARIZER_SYSTEM_PROMPT,
