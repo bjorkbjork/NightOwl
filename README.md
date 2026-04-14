@@ -2,9 +2,17 @@
 
 **Winner — Hack48 2026**
 
+![NightOwl](images/nightowl.jpg)
+
 NightOwl is an agent control plane inspired by [OpenClaw](https://github.com/openclaw/openclaw)'s parallel swarm model. Agents spawn independent child sessions that run concurrently and push results back, but NightOwl adds human-in-the-loop approvals, real-time observability with an intent graph, and managed infrastructure — making autonomous agents safe enough to hand to a team.
 
 Users interact through messaging apps (Telegram, WhatsApp, SMS). Agents coordinate via a session manager, execute tools through Composio's MCP gateway, and run sandboxed CLI/browser/computer-use tasks in ephemeral Docker containers. A web dashboard shows the live session tree, agent activity, and pending approval requests.
+
+![Dashboard](images/sessions.jpg)
+
+| Telegram Chat | Telegram HITL Approval |
+|:-:|:-:|
+| ![Chat](images/chat.jpg) | ![HITL](images/hitl.jpg) |
 
 ## Architecture
 
